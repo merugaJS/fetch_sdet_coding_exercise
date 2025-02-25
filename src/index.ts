@@ -14,7 +14,6 @@ program.option('-l, --locations <locations...>', 'List of locations to process')
     .arguments('[locations...]')
     .action(async (arglocations: string[]) => {
         const { locations } = program.opts();
-
         let processedLocations: string[] = []
         if (arglocations.length !== 0) {
             processedLocations = arglocations

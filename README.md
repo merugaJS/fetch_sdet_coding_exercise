@@ -45,7 +45,6 @@ npm install -g ts-node
   API_KEY={API KEY}
   ```
 
-
 ## Usage
 
 ### Basic Commands
@@ -87,6 +86,7 @@ geoloc-util --locations "Los Angeles, CA" 90210
 ```bash
 npm test
 ```
+
 #### Test Passed
 
 ![Test Results](test_passed.png)

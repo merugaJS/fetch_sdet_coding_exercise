@@ -2,6 +2,7 @@ import { describe, it } from "node:test";
 import { execa } from "execa";
 import assert from "node:assert";
 
+
 async function runGeoLocUtility(args, flag) {
     let result;
     const splitArgs = args.match(/(?:[^\s"']+|"[^"]*"|'[^']*')/g) || [];
@@ -157,7 +158,6 @@ describe('geoloc-util Integration Tests', () => {
         assert.match(stdout, /Usage/)
         assert.match(stdout, /Options/)
     });
-
 
     // When values passed with flags
     it('handles valid city/state input with flag -l', async () => {
