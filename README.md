@@ -28,15 +28,22 @@ npm install
 
 # Install globally
 npm install -g .
+
+# Make the script executable
+chmod +x src/index.ts
+
+# Install ts-node globally if not already installed (to run geoloc-util without using any npx command):
+npm install -g ts-node
 ```
 
 ## Configuration
 ### API Keys
-    1. Get free API key from [OpenWeather](https://home.openweathermap.org/users/sign_up)
-    2. Update .env file
-```javascript
-API_KEY={API KEY}
-```
+    1. Find the API key from the ![pdf](Fetch_Coding_Exercise_SDET_v2.pdf) under Authorization section.
+    2. You can also get API KEY from [Openweather](https://home.openweathermap.org/users/sign_up).
+    3. Update .env file with the API_KEY
+  ```javascript
+  API_KEY={API KEY}
+  ```
 
 
 ## Usage
@@ -62,14 +69,11 @@ geoloc-util --locations "Los Angeles, CA" 90210
 ```json
 [
   {
-    "input": "Madison, WI",
-    "data": {
-      "name": "Madison",
-      "lat": 43.074761,
-      "lon": -89.3837613,
-      "state": "Wisconsin",
-      "country": "US"
-    }
+    "name": "Madison",
+    "lat": 43.074761,
+    "lon": -89.3837613,
+    "country": "US",
+    "state": "Wisconsin"
   },
   {
     "input": "00000",
@@ -83,3 +87,6 @@ geoloc-util --locations "Los Angeles, CA" 90210
 ```bash
 npm test
 ```
+#### Test Passed
+
+![Test Results](test_passed.png)

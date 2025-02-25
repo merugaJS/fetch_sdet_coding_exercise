@@ -14,12 +14,15 @@ program.option('-l, --locations <locations...>', 'List of locations to process')
     .arguments('[locations...]')
     .action(async (arglocations: string[]) => {
         const { locations } = program.opts();
-        const locationsToProcess: string[] = locations || arglocations;
-        const processedLocations = locationsToProcess.flatMap(location => {
-            return location.split(/ +(?=(?:[^"]*"[^"]*")*[^"]*$)/)
-                .map(s => s.replace(/^"|"$/g, '').trim());
-        });
-        if (processedLocations.length === 0 || processedLocations[0] === '') {
+
+        let processedLocations: string[] = []
+        if (arglocations.length !== 0) {
+            processedLocations = arglocations
+        } else {
+            processedLocations = locations
+        }
+
+        if (!processedLocations || processedLocations.length === 0 || processedLocations[0] === '') {
             program.error('Error: Missing Arguments. Send either locations or zip code either as arguments or with -l or --locations');
         }
         await getResult(processedLocations)
