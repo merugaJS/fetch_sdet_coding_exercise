@@ -38,12 +38,14 @@ npm install -g ts-node
 
 ## Configuration
 ### API Keys
-    1. Find the API key from the ![pdf](Fetch_Coding_Exercise_SDET_v2.pdf) under Authorization section.
-    2. You can also get API KEY from [Openweather](https://home.openweathermap.org/users/sign_up).
-    3. Update .env file with the API_KEY
-  ```javascript
-  API_KEY={API KEY}
-  ```
+1. Find the API key from the [pdf](./Fetch_Coding_Exercise_SDET_v2.pdf) under the Authorization section.
+2. You can also get the API KEY from [Openweather](https://home.openweathermap.org/users/sign_up).
+3. Update the .env file with the API_KEY:
+
+```javascript
+API_KEY={API KEY}
+```
+
 
 ## Usage
 
